@@ -14,7 +14,7 @@ export type UserType = {
 };
 
 export type UsersObjectType = {
-  // filter(arg0: (user: any) => void): unknown;
+  filter(arg0: (user: UserType) => void): unknown;
   myFriends: Array<UserType>; // пропиши типизацию
 };
 
@@ -46,9 +46,10 @@ export const HW2 = () => {
   }
 
   let [currentUsers, setCurrentUsers] = useState<UsersObjectType>(users);
+
   const filterUsers = () => {
-    const filteredUsers = currentUsers.filter((user) => {
-      user.street.city === 'Los Angeles'
+    const filteredUsers = currentUsers.filter((user: UserType) => {
+      user.address.city === 'Los Angeles'
     }); //'НУЖНО ПРОФИЛЬТРОВАТЬ ДРУЗЕЙ. ОСТАВЛЯЕМ ТОЛЬКО ТЕХ, КОТОРЫЕ ЖИВУТ В ГОРОДЕ LOS ANGELES'
     setCurrentUsers({ myFriends: filteredUsers });
   };
