@@ -46,10 +46,12 @@ export const HW2 = () => {
   }
 
   let [currentUsers, setCurrentUsers] = useState<UsersObjectType>(users);
-
+  
+  console.log(currentUsers)
   const filterUsers = () => {
-    const filteredUsers = currentUsers.filter((user) => {
-      user.street.city === 'Los Angeles'
+    
+    const filteredUsers = currentUsers.myFriends.filter((user) => {
+      return user.address.city === 'Los Angeles'
     }); //'НУЖНО ПРОФИЛЬТРОВАТЬ ДРУЗЕЙ. ОСТАВЛЯЕМ ТОЛЬКО ТЕХ, КОТОРЫЕ ЖИВУТ В ГОРОДЕ LOS ANGELES'
     setCurrentUsers({ myFriends: filteredUsers });
   };
