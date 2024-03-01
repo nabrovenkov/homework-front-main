@@ -48,15 +48,10 @@ export const HW2 = () => {
   
   console.log(currentUsers)
   const filterUsers = () => {
-<<<<<<< HEAD
     
     const filteredUsers = currentUsers.myFriends.filter((user) => {
       return user.address.city === 'Los Angeles'
     }); //'НУЖНО ПРОФИЛЬТРОВАТЬ ДРУЗЕЙ. ОСТАВЛЯЕМ ТОЛЬКО ТЕХ, КОТОРЫЕ ЖИВУТ В ГОРОДЕ LOS ANGELES'
-=======
-    const filteredUsers =  currentUsers.myFriends.filter(user => user.address.city === 'Los Angeles') //'НУЖНО ПРОФИЛЬТРОВАТЬ ДРУЗЕЙ. ОСТАВЛЯЕМ ТОЛЬКО ТЕХ, КОТОРЫЕ ЖИВУТ В ГОРОДЕ LOS ANGELES'
-    console.log(filteredUsers);
->>>>>>> 56b5e9e36011fb50e871e3780a3d93ec7841d110
     setCurrentUsers({ myFriends: filteredUsers });
   };
 
